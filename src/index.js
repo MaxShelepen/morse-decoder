@@ -39,16 +39,16 @@ const MORSE_TABLE = {
 
 function decode(expr) {
     MORSE_TABLE[''] = ' ';
-    let char_10 = /.{1,10}/g; 
-    let char_2 = /\d{1,2}/g; 
+    let elem1 = /.{1,10}/g; 
+    let elem2 = /\d{1,2}/g; 
     let space = /\*{1,10}/g; 
     
-    let letterArr = expr.match(char_10);
+    let letterArr = expr.match(elem1);
     let result = '';
 
     letterArr.forEach(function(element) {
-       if(!space.test(symbolsArr = element)){
-        symbolsArr = element.match(char_2)} else{
+       if(!space.test(element)){
+        symbolsArr = element.match(elem2)} else{
         ['space']}
       
       const decodedSymbols = symbolsArr.map(function(item) {
